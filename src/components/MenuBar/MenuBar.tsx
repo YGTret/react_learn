@@ -1,37 +1,37 @@
 import {useState} from 'react';
-import {menus} from './menuData.ts';
-import {Bar, MenuWrapper, MenuButton, Dropdown, DropdownItem} from "./MenuBar.styles.ts";
+import {menus} from './data/menuData.ts';
+import {StyledBar, StyledMenuWrapper, StyledMenuButton, StyledDropdown, StyledDropdownItem} from "./StyledMenuBar.ts";
 
 export function MenuBar() {
 
     const [openMenuId, setOpenMenuId] = useState<string | null>(null);
 
     return (
-        <Bar>
+        <StyledBar>
             {menus.map((menu)=>(
-               <MenuWrapper key={menu.id}>
-                   <MenuButton
+               <StyledMenuWrapper key={menu.id}>
+                   <StyledMenuButton
                        $active={openMenuId === menu.id}
                        onClick={() =>setOpenMenuId(openMenuId === menu.id ? null : menu.id )}
                    >
                        {menu.title}
-                   </MenuButton>
+                   </StyledMenuButton>
                    {openMenuId === menu.id && (
-                       <Dropdown>
+                       <StyledDropdown>
                            {menu.items.map((item) => (
-                               <DropdownItem key={item.id}
+                               <StyledDropdownItem key={item.id}
                                onClick={
                                    () => {
                                        console.log('Нажато:', item.label)
                                        setOpenMenuId(null)
                                }}
                                >{item.label}
-                               </DropdownItem>
+                               </StyledDropdownItem>
                            ))}
-                       </Dropdown>
+                       </StyledDropdown>
                    )}
-               </MenuWrapper>
+               </StyledMenuWrapper>
             ))}
-        </Bar>
+        </StyledBar>
     )
 }

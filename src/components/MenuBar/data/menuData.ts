@@ -1,5 +1,4 @@
-export type MenuItem = { id: string; label: string };
-export type Menu = { id: string; title: string; items: MenuItem[] };
+import type {Menu} from "../model/MenuBar.types.ts";
 export const menus: Menu[] = [
     {
         id: 'file',
