@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Bar = styled.div`
+export const StyledBar = styled.div`
   
     display: flex;
     gap: 4px;
@@ -8,7 +8,7 @@ export const Bar = styled.div`
     background: #343e40;
 `;
 
-export const MenuButton = styled.button<{ $active: boolean}>`
+export const StyledMenuButton = styled.button<{ $active: boolean}>`
 
     padding: 6px 12px;
     border: none;
@@ -22,12 +22,12 @@ export const MenuButton = styled.button<{ $active: boolean}>`
         background: #3c3f41;
     }
 `;
-export const MenuWrapper = styled.div`
+export const StyledMenuWrapper = styled.div`
 
     position: relative;
 `;
 
-export const Dropdown = styled.ul`
+export const StyledDropdown = styled.ul`
     
     position: absolute;
     top: 100%;
@@ -41,7 +41,7 @@ export const Dropdown = styled.ul`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
-export const DropdownItem = styled.li`
+export const StyledDropdownItem = styled.li`
     
     padding: 8px 16px;
     cursor: pointer;
